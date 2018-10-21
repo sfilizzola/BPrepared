@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.avenuecode.bprepared.viewmodels.UserInfoViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/user_info_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="User Info"
+            android:textAllCaps="true"
+            android:textColor="@android:color/black"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/user_info_reduced_mobility_label"
+            android:text="Reduced Mobility"
+            android:textColor="@android:color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.SwitchCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+
+
+        <!--var name: String,
+                       var email:String,
+                       var sex:Char,
+                       var age:Int,
+                       var city:String,
+                       var children:Int,
+                       var reducedMobility:Boolean,
+                       var carOwner:Boolean,
+                       var weigth:Int,
+                       var height:Double,
+                       var practiceSports:Boolean,
+                       var smoker:Boolean,
+                       var drinker:Boolean,
+                       var yearIncome:Float,
+                       var currentJob:String,
+                       var mainHobby:String,
+                       var motherLanguage:String,
+                       var petOwner:Boolean -->
+
+
+        <Button
+            android:id="@+id/user_info_save"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@android:color/holo_blue_light"
+            android:text="SAVE"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>
