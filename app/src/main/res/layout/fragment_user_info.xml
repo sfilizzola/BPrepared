@@ -33,36 +33,120 @@
 
         <TextView
             android:id="@+id/user_info_reduced_mobility_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:text="Reduced Mobility"
             android:textColor="@android:color/black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_info_title" />
 
         <android.support.v7.widget.SwitchCompat
+            android:id="@+id/user_info_reduced_mobility_switch"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/user_info_reduced_mobility_label" />
+
+        <TextView
+            android:id="@+id/user_info_car_owner_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:text="Car Owner"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_info_reduced_mobility_label" />
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/user_info_car_owner_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/user_info_car_owner_label" />
 
 
+        <TextView
+            android:id="@+id/user_info_sports_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:text="Practice Sports"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_info_car_owner_label" />
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/user_info_sports_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/user_info_sports_label" />
+
+        <TextView
+            android:id="@+id/user_info_smoker_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:text="Smoker"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_info_sports_label" />
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/user_info_smoker_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/user_info_smoker_label" />
 
 
-        <!--var name: String,
-                       var email:String,
-                       var sex:Char,
-                       var age:Int,
-                       var city:String,
-                       var children:Int,
-                       var reducedMobility:Boolean,
-                       var carOwner:Boolean,
-                       var weigth:Int,
-                       var height:Double,
-                       var practiceSports:Boolean,
-                       var smoker:Boolean,
-                       var drinker:Boolean,
-                       var yearIncome:Float,
-                       var currentJob:String,
-                       var mainHobby:String,
-                       var motherLanguage:String,
-                       var petOwner:Boolean -->
+        <TextView
+            android:id="@+id/user_info_drinker_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:text="Drinker"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_info_smoker_label" />
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/user_info_drinker_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/user_info_drinker_label" />
+
+
+        <TextView
+            android:id="@+id/user_info_pets_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:text="Pet Owner"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_info_drinker_label" />
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/user_info_pets_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/user_info_pets_label" />
 
 
         <Button
@@ -72,6 +156,7 @@
             android:layout_margin="8dp"
             android:background="@android:color/holo_blue_light"
             android:text="SAVE"
+            android:onClick="@{() -> viewModel.onSaveClick()}"
             android:textColor="@android:color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

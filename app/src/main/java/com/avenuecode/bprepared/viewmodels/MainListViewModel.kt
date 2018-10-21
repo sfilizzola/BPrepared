@@ -2,6 +2,7 @@ package com.avenuecode.bprepared.viewmodels
 
 import android.arch.lifecycle.MutableLiveData
 import android.databinding.Bindable
+import android.databinding.ObservableInt
 import android.view.View
 import com.avenuecode.bprepared.BaseApp
 import com.avenuecode.bprepared.repos.DataRepository
@@ -15,6 +16,9 @@ class MainListViewModel @Inject constructor(private var repository: DataReposito
     private val data = MutableLiveData<MainListViewStatus>()
 
     private var currentDisaster: Disasters = Disasters.NONE
+
+    var progressVisibility = ObservableInt(View.GONE)
+    var recyclerVisibility = ObservableInt(View.VISIBLE)
 
     private enum class Disasters {
         NONE, FLOOD, HURRICANE
@@ -32,10 +36,12 @@ class MainListViewModel @Inject constructor(private var repository: DataReposito
 
 
     fun getServerList() {
+        showLoading(true)
         compositeDisposable.add(repository.getSuggestedItems()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io()).subscribe({
                     data.postValue(MainListViewStatus.ListSuccess(it))
+                    showLoading(false)
                 }, {
                     data.postValue(MainListViewStatus.Error(it.message))
                 }))
@@ -76,6 +82,16 @@ class MainListViewModel @Inject constructor(private var repository: DataReposito
 
 
     fun getData():MutableLiveData<MainListViewStatus> = data
+
+    fun showLoading(show:Boolean){
+        if (show) {
+            progressVisibility.set(View.VISIBLE)
+            recyclerVisibility.set(View.GONE)
+        } else  {
+            progressVisibility.set(View.GONE)
+            recyclerVisibility.set(View.VISIBLE)
+        }
+    }
 
 
 }
